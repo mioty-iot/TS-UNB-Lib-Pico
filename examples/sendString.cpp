@@ -84,8 +84,11 @@ ks-contracts@iis.fraunhofer.de
 using namespace TsUnbLib::RPPico;
 
 // Select preset depending on TX chip
-TsUnb_Rfm69hwEU1_t TsUnb_Node;
+//TsUnb_EU1_Rfm69w_t TsUnb_Node;
+TsUnb_EU1_Rfm69hw_t TsUnb_Node;
 
+//TsUnb_US0_Rfm69w_t TsUnb_Node;
+//TsUnb_US0_Rfm69hw_t TsUnb_Node;
 
 
 //The setup function is called once at startup of the sketch
