@@ -88,11 +88,96 @@ ks-contracts@iis.fraunhofer.de
 namespace TsUnbLib {
 namespace RPPico {
 
+/////////////////////////////////
+// RFM69w
+/////////////////////////////////
+
+//! RFM69w in EU0 configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<14224261, 14224261, 39, 39, TsUnb::TsUnb_UPG1, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, false, 10, TsUnb::RadioBurst <2,2> >, false> TsUnb_EU0_Rfm69w_t;
+
+//! RFM69w in EU1 configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<14224261, 14222623, 39, 39, TsUnb::TsUnb_UPG1, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, false, 10, TsUnb::RadioBurst <2,2> >, false> TsUnb_EU1_Rfm69w_t;
+
+//! RFM69w in EU2 configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<14215168, 14202061, 468, 39, TsUnb::TsUnb_UPG1, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, false, 10, TsUnb::RadioBurst <2,2> >, false> TsUnb_EU2_Rfm69w_t;
+
+//! RFM69w in US0 configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<15014297, 15001190, 468, 39, TsUnb::TsUnb_UPG1, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, false, 10, TsUnb::RadioBurst <2,2> >, true> TsUnb_US0_Rfm69w_t;
+
+//! RFM69w in EU0 Low Latency configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<14224261, 14224261, 39, 39, TsUnb::TsUnb_UPG3, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, false, 10, TsUnb::RadioBurst <2,2> >, false> TsUnb_EU0_LowLatency_Rfm69w_t;
+
+//! RFM69w in EU1 Low Latency configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<14224261, 14222623, 39, 39, TsUnb::TsUnb_UPG3, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, false, 10, TsUnb::RadioBurst <2,2> >, false> TsUnb_EU1_LowLatency_Rfm69w_t;
+
+//! RFM69w in EU2 Low Latency configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<14215168, 14202061, 468, 39, TsUnb::TsUnb_UPG3, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, false, 10, TsUnb::RadioBurst <2,2> >, false> TsUnb_EU2_LowLatency_Rfm69w_t;
+
+//! RFM69w in US0 Low Latency configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<15014297, 15001190, 468, 39, TsUnb::TsUnb_UPG3, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, false, 10, TsUnb::RadioBurst <2,2> >, true> TsUnb_US0_LowLatency_Rfm69w_t;
+
+
+
+/////////////////////////////////
+// RFM69hw
+/////////////////////////////////
+
+//! RFM69hw in EU0 configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<14224261, 14224261, 39, 39, TsUnb::TsUnb_UPG1, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, true, 10, TsUnb::RadioBurst <2,2> >, false> TsUnb_EU0_Rfm69hw_t;
 
 //! RFM69hw in EU1 configuration
 typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
-		TsUnb::Phy<14224261, 14222623, 39, 39, TsUnb::TsUnb_UPG1, 0, 3, TsUnb::RadioBurst <2,2> >,
-		Trx::Rfm69hw<RPPicoTsUnb<48>, false, 10, TsUnb::RadioBurst <2,2> > > TsUnb_Rfm69hwEU1_t;
+	TsUnb::Phy<14224261, 14222623, 39, 39, TsUnb::TsUnb_UPG1, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, true, 10, TsUnb::RadioBurst <2,2> >, false> TsUnb_EU1_Rfm69hw_t;
+
+//! RFM69hw in EU2 configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<14215168, 14202061, 468, 39, TsUnb::TsUnb_UPG1, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, true, 10, TsUnb::RadioBurst <2,2> >, false> TsUnb_EU2_Rfm69hw_t;
+
+//! RFM69hw in US0 configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<15014297, 15001190, 468, 39, TsUnb::TsUnb_UPG1, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, true, 10, TsUnb::RadioBurst <2,2> >, true> TsUnb_US0_Rfm69hw_t;
+
+//! RFM69hw in EU0 Low Latency configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<14224261, 14224261, 39, 39, TsUnb::TsUnb_UPG3, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, true, 10, TsUnb::RadioBurst <2,2> >, false> TsUnb_EU0_LowLatency_Rfm69hw_t;
+
+//! RFM69hw in EU1 Low Latency configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<14224261, 14222623, 39, 39, TsUnb::TsUnb_UPG3, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, true, 10, TsUnb::RadioBurst <2,2> >, false> TsUnb_EU1_LowLatency_Rfm69hw_t;
+
+//! RFM69hw in EU2 Low Latency configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<14215168, 14202061, 468, 39, TsUnb::TsUnb_UPG3, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, true, 10, TsUnb::RadioBurst <2,2> >, false> TsUnb_EU2_LowLatency_Rfm69hw_t;
+
+//! RFM69hw in US0 Low Latency configuration
+typedef TsUnb::SimpleNode<TsUnb::FixedUplinkMac, 
+	TsUnb::Phy<15014297, 15001190, 468, 39, TsUnb::TsUnb_UPG3, 0, 3, TsUnb::RadioBurst <2,2> >,
+	Trx::Rfm69hw<RPPicoTsUnb<48>, true, 10, TsUnb::RadioBurst <2,2> >, true> TsUnb_US0_LowLatency_Rfm69hw_t;
+
 
 
 };	// namespace RPPico
